@@ -1,0 +1,65 @@
+settings = {
+    orientation = {
+        default = 'landscapeRight',
+        supported = {'landscapeLeft', 'landscapeRight'},
+    },
+    android = {
+        versionCode = '1',
+        versionName ='1.0',
+        installLocation = 'auto',
+        usesPermissions = {
+            'com.android.vending.BILLING',
+            'android.permission.INTERNET',
+            'android.permission.READ_PHONE_STATE',
+            'android.permission.WRITE_EXTERNAL_STORAGE',
+            'android.permission.ACCESS_COARSE_LOCATION',
+            'android.permission.ACCESS_WIFI_STATE',
+            'android.permission.ACCESS_NETWORK_STATE'
+        },
+        usesFeatures = {
+            { name = "android.hardware.location", required = false },
+            { name = "android.hardware.location.network", required = false },
+        },
+    },
+    iphone = {
+        plist = {
+            FacebookAppID = '616336078377449',
+            CFBundleURLTypes = {
+                {
+                    CFBundleURLSchemes = {
+                        'fb616336078377449'
+                    }
+                }
+            },
+            CFBundleIconFiles = {
+	           'Icon.png',
+	           'Icon@2x.png',
+	           'Icon-72.png',
+	           'Icon-72@2x.png',
+	           'Icon-Small-50.png',
+	           'Icon-Small.png',
+	           'Icon-Small@2x.png',
+               'Icon-40.png',
+               'Icon-40@2x.png',
+               'Icon-60.png',
+               'Icon-60@2x.png',
+               'Icon-76.png',
+               'Icon-76@2x.png'
+	        },
+            UIPrerenderedIcon = true,
+            UIApplicationExitsOnSuspend = false,
+            UIAppFonts = {
+                    'Arcade Interlaced.ttf',
+                    'Adventure Subtitles.ttf',
+                    'GlasnostDemibold.ttf'}
+            }
+        },
+    plugins = {
+        ['CoronaProvider.analytics.flurry'] = {
+            publisherId = 'com.coronalabs',
+        },
+        ['plugin.zip'] = {
+            publisherId = 'com.coronalabs',
+        },
+    },
+}
