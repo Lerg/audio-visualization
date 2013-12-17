@@ -56,7 +56,7 @@ _H = display.contentHeight
 _T = display.screenOriginY -- Top
 _L = display.screenOriginX -- Left
 _R = display.viewableContentWidth - _L -- Right
-_B = display.viewableContentHeight - _T-- Bottom
+_B = display.viewableContentHeight - _T-- Bottom4
 _CX = math.floor(_W / 2)
 _CY = math.floor(_H / 2)
 

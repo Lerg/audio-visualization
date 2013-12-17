@@ -214,14 +214,12 @@ function HSVtoRGB(h, s, v)
     local r,g,b
     local i
     local f,p,q,t
-    
     if s == 0 then
         r = v
         g = v
         b = v
         return r, g, b
     end
-  
     h =   h / 60;
     i  = math.floor(h);
     f = h - i;

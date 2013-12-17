@@ -3,14 +3,6 @@ local app = require('lib.app')
 local api = app.api
 function scene:createScene (event)
     local group = self.view
-    self.snapshot = {}
-    self.snapshot[1] = display.newSnapshot(_W, _H)
-    self.snapshot[1]:translate(_CX, _CY)
-    group:insert(self.snapshot[1])
-    self.snapshot[2] = display.newSnapshot(_W, _H)
-    self.snapshot[2]:translate(_CX, _CY)
-    group:insert(self.snapshot[2])
-    
     self.viewGroup = display.newGroup()
     self.drawGroup = display.newGroup()
     self.activeSnapshot = display.newSnapshot(_W, _H)
@@ -82,7 +74,6 @@ function scene:drawAudioWave()
     self.drawGroup:insert(self.blackRect)
     display.remove(self.waveLine)
     local d = _W / (#data - 1)
-    self.snapshot[2].fill.effect = nil
     self.waveLine = display.newLine(self.drawGroup, -_CX, data[1], d - _CX, data[2])
     for i = 3, #data do
         self.waveLine:append(d * (i - 1) - _CX, data[i])

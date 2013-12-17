@@ -2,6 +2,9 @@ local _M = {}
 
 local app = require('lib.app')
 
+-- Audio is converted to RAW with ffmpeg command
+-- ffmpeg -i fire.mp3 -f u8 -acodec pcm_u8 -ar 16000 -ac 1 fire.raw
+
 function _M:loadAudio()
     local f = io.open(system.pathForFile('music/fire.raw', system.ResourceDirectory), 'rb')
     local data = f:read('*a')
@@ -14,7 +17,7 @@ function _M:loadAudio()
     local stream = audio.loadStream('music/fire.mp3')
     local c = audio.play(stream, {loops = -1})
     audio.setVolume(0, {channel = c})
-    audio.fade{channel = c, time = 3000, volume = 0.01}
+    audio.fade{channel = c, time = 3000, volume = 0.5}
     self.audioStart = system.getTimer()
 end
 
